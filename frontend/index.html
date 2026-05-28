@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShocBridge - Intelligent Shoe Shopping</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">ShocBridge</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="measurement.html">Measure</a></li>
+                <li><a href="dashboard.html">Account</a></li>
+                <li><a href="#" id="cartLink" class="cart-link">Cart <span id="cartCount">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Perfect Shoe Size</h1>
+            <p>Intelligent foot measurement technology for the perfect fit every time</p>
+            <div class="hero-buttons">
+                <a href="measurement.html" class="btn btn-primary">Start Measuring</a>
+                <a href="products.html" class="btn btn-secondary">Browse Shoes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose ShocBridge?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🦶</div>
+                    <h3>Accurate Measurements</h3>
+                    <p>Get precise foot measurements using our advanced measurement tool</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Recommendations</h3>
+                    <p>Smart algorithm recommends the perfect size based on your measurements</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👟</div>
+                    <h3>Wide Selection</h3>
+                    <p>Browse hundreds of shoes from top brands worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Easy Returns</h3>
+                    <p>Hassle-free returns and exchanges for your peace of mind</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Shoes Section -->
+    <section class="popular-shoes">
+        <div class="container">
+            <h2>Popular Shoes</h2>
+            <div id="popularShoes" class="shoes-grid"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Find Your Perfect Shoe?</h2>
+            <p>Get started with our measurement tool today</p>
+            <a href="measurement.html" class="btn btn-light">Measure Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ShocBridge. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

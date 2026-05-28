@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Dashboard - ShocBridge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><a href="index.html">ShocBridge</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="measurement.html">Measure</a></li>
+                <li><a href="dashboard.html" class="active">Account</a></li>
+                <li><a href="#" id="cartLink" class="cart-link">Cart <span id="cartCount">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <!-- Auth Check -->
+            <div id="authCheck"></div>
+
+            <!-- Authenticated Dashboard -->
+            <div id="dashboard" style="display: none;">
+                <div class="dashboard-layout">
+                    <!-- Sidebar -->
+                    <aside class="dashboard-sidebar">
+                        <div class="user-profile">
+                            <div class="avatar">👤</div>
+                            <h3 id="userName">User Name</h3>
+                            <p id="userEmail">user@example.com</p>
+                        </div>
+
+                        <nav class="dashboard-nav">
+                            <button class="nav-item active" data-tab="orders">Orders</button>
+                            <button class="nav-item" data-tab="measurements">Measurements</button>
+                            <button class="nav-item" data-tab="profile">Profile</button>
+                            <button class="nav-item" data-tab="preferences">Preferences</button>
+                            <button class="nav-item logout" id="logoutBtn">Logout</button>
+                        </nav>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <main class="dashboard-main">
+                        <!-- Orders Tab -->
+                        <div id="ordersTab" class="tab-content active">
+                            <h2>Order History</h2>
+                            <div id="ordersList" class="orders-list"></div>
+                        </div>
+
+                        <!-- Measurements Tab -->
+                        <div id="measurementsTab" class="tab-content">
+                            <h2>Foot Measurements</h2>
+                            <div id="measurementsList" class="measurements-list"></div>
+                            <a href="measurement.html" class="btn btn-primary">Take New Measurement</a>
+                        </div>
+
+                        <!-- Profile Tab -->
+                        <div id="profileTab" class="tab-content">
+                            <h2>Profile Information</h2>
+                            <form id="profileForm" class="profile-form">
+                                <div class="form-group">
+                                    <label for="profileFirstName">First Name</label>
+                                    <input type="text" id="profileFirstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profileLastName">Last Name</label>
+                                    <input type="text" id="profileLastName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profileEmail">Email</label>
+                                    <input type="email" id="profileEmail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profilePhone">Phone</label>
+                                    <input type="tel" id="profilePhone">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Preferences Tab -->
+                        <div id="preferencesTab" class="tab-content">
+                            <h2>Preferences</h2>
+                            <div class="preferences-form">
+                                <div class="preference-item">
+                                    <label>
+                                        <input type="checkbox" id="newsletterOpt" checked>
+                                        Subscribe to newsletter
+                                    </label>
+                                </div>
+                                <div class="preference-item">
+                                    <label>
+                                        <input type="checkbox" id="emailNotifications" checked>
+                                        Email notifications
+                                    </label>
+                                </div>
+                                <div class="preference-item">
+                                    <label>
+                                        <input type="checkbox" id="productRecommendations" checked>
+                                        Product recommendations
+                                    </label>
+                                </div>
+                                <button id="savePreferences" class="btn btn-primary">Save Preferences</button>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ShocBridge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

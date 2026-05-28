@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foot Measurement - ShocBridge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><a href="index.html">ShocBridge</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="measurement.html" class="active">Measure</a></li>
+                <li><a href="dashboard.html">Account</a></li>
+                <li><a href="#" id="cartLink" class="cart-link">Cart <span id="cartCount">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Foot Measurement Tool</h1>
+        <p>Get accurate measurements for perfect shoe sizing</p>
+    </section>
+
+    <!-- Measurement Section -->
+    <section class="measurement-section">
+        <div class="container">
+            <div class="measurement-layout">
+                <!-- Instructions -->
+                <aside class="measurement-instructions">
+                    <h3>How to Measure</h3>
+                    <div class="instructions-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h4>Prepare</h4>
+                            <p>Place your foot on a flat surface. Wear the socks you'll wear with your shoes.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h4>Measure Length</h4>
+                            <p>Measure from your heel to your longest toe. Use the ruler guide below.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h4>Measure Width</h4>
+                            <p>Measure across the widest part of your foot.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h4>Submit</h4>
+                            <p>Enter your measurements and get personalized size recommendations.</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Measurement Form -->
+                <main class="measurement-form-container">
+                    <!-- Ruler Guide -->
+                    <div class="ruler-guide">
+                        <h4>Ruler Guide (Print or Use Your Phone)</h4>
+                        <div class="ruler">
+                            <div class="ruler-line" style="width: 50px;">2"</div>
+                            <div class="ruler-line" style="width: 100px;">4"</div>
+                            <div class="ruler-line" style="width: 150px;">6"</div>
+                            <div class="ruler-line" style="width: 200px;">8"</div>
+                            <div class="ruler-line" style="width: 250px;">10"</div>
+                            <div class="ruler-line" style="width: 300px;">12"</div>
+                        </div>
+                    </div>
+
+                    <!-- Measurement Form -->
+                    <form id="measurementForm" class="measurement-form">
+                        <div class="form-group">
+                            <label for="footLength">Foot Length (inches)</label>
+                            <input type="number" id="footLength" name="footLength" step="0.1" min="0" max="15" placeholder="e.g., 9.5" required>
+                            <small>Measure from heel to longest toe</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="footWidth">Foot Width (inches)</label>
+                            <input type="number" id="footWidth" name="footWidth" step="0.1" min="0" max="10" placeholder="e.g., 3.8" required>
+                            <small>Measure across widest part</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="arch">Arch Type</label>
+                            <select id="arch" name="arch" required>
+                                <option value="">Select your arch type</option>
+                                <option value="low">Low (Flat Feet)</option>
+                                <option value="medium">Medium (Normal)</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="footType">Foot Type</label>
+                            <select id="footType" name="footType" required>
+                                <option value="">Select your foot type</option>
+                                <option value="narrow">Narrow</option>
+                                <option value="average">Average</option>
+                                <option value="wide">Wide</option>
+                                <option value="extra-wide">Extra Wide</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredBrand">Preferred Brand (Optional)</label>
+                            <input type="text" id="preferredBrand" name="preferredBrand" placeholder="e.g., Nike, Adidas">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Get Size Recommendation</button>
+                    </form>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section (Hidden by default) -->
+    <section id="resultsSection" class="results-section" style="display: none;">
+        <div class="container">
+            <h2>Your Size Recommendations</h2>
+            <div id="recommendationResults" class="recommendations-grid"></div>
+            <button onclick="location.href='products.html'" class="btn btn-primary">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ShocBridge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/measurement.js"></script>
+</body>
+</html>
