@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ShocBridge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><a href="index.html">ShocBridge</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="measurement.html">Measure</a></li>
+                <li><a href="dashboard.html">Account</a></li>
+                <li><a href="cart.html" class="active">Cart <span id="cartCount">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Shopping Cart</h1>
+        <p>Review your selected items</p>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div id="authCheck"></div>
+            
+            <!-- Cart Content (Hidden by default until auth check) -->
+            <div id="cartContent" style="display: none;">
+                <div class="cart-layout">
+                    <!-- Cart Items -->
+                    <main class="cart-items-container">
+                        <div id="cartItems" class="cart-items-list"></div>
+                    </main>
+
+                    <!-- Cart Summary -->
+                    <aside class="cart-summary">
+                        <h3>Order Summary</h3>
+                        <div id="cartSummary" class="summary-box"></div>
+                        <button id="checkoutBtn" class="btn btn-primary btn-large">Proceed to Checkout</button>
+                        <a href="products.html" class="btn btn-outline btn-large" style="margin-top: 0.5rem; display: block; text-align: center;">Continue Shopping</a>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empty Cart Message -->
+    <section id="emptyCart" class="empty-cart" style="display: none;">
+        <div class="container">
+            <div style="text-align: center; padding: 4rem;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🛒</div>
+                <h2>Your cart is empty</h2>
+                <p style="margin: 1rem 0; color: #666;">Start shopping to add items to your cart</p>
+                <a href="products.html" class="btn btn-primary">Browse Shoes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ShocBridge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Size Guide Modal -->
+    <div id="sizeGuideModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Size Guide</h2>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                <tr style="background-color: #f0f0f0;">
+                    <th style="padding: 0.5rem; border: 1px solid #ddd;">US Size</th>
+                    <th style="padding: 0.5rem; border: 1px solid #ddd;">EU Size</th>
+                    <th style="padding: 0.5rem; border: 1px solid #ddd;">Length (inches)</th>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">6</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">37</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">8.5"</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">7</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">38</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">8.8"</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">8</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">39</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">9.1"</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">9</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">40</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">9.4"</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">10</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">41</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">9.7"</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">11</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">42</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">10.0"</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">12</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">43</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">10.3"</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
